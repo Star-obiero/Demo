@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>video</title>
+    <style>
+        @font-face {
+            font-family: elephant;
+            /* Note: You need to specify a src for the font */
+        }
+        
+        body {
+            background-color: #111;
+        }
+        
+        .wrapper-main {
+            width: 900px;  /* Fixed: Remove colon, add semicolon */
+            margin: 0 auto;
+        }
+        
+        button {
+            padding: 10px 16px;
+            background-color: #fff;  /* Fixed: Remove extra 'f' */
+            font-size: 20px;
+            font-family: elephant;
+            border-radius: 20px;  /* Fixed: Remove colon, add semicolon */
+            cursor: pointer;  /* Fixed: Typo in 'cursor' */
+        }
+    </style>
+</head>
+<body>
+    <section class="wrapper-main">
+        <video id="myVideo" width="900" controls autoplay muted loop poster="videos/videoposter.png">
+            <source src="Desktop/HTML New folder videos/video.mp4" type="video/mp4">  <!-- Fixed: Backslash to forward slash -->
+            <source src="videos/video.ogg" type="video/ogg">
+            <source src="videos/video.webm" type="video/webm">
+            Your browser does not support html5 videos.
+        </video>
+        <br>
+        <button onclick="playPause()">Play/Pause</button>
+        <button onclick="halfSize()">Half size</button>
+        <button onclick="normalSize()">Normal size</button>
+    </section>
+
+    <script>
+        var myVideo = document.getElementById("myVideo");
+
+        function playPause() {
+            if (myVideo.paused) 
+                myVideo.play(); 
+            else 
+                myVideo.pause(); 
+        }
+
+        function halfSize() { 
+            myVideo.width = 450; 
+        }
+
+        function normalSize() { 
+            myVideo.width = 900; 
+        }
+    </script>
+</body>
+</html>
